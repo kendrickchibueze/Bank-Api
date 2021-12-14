@@ -3,7 +3,6 @@ const connectDB = require('./db/index')
 const morgan = require('morgan');
 const bodyParser = require('body-parser')
 const userRouter = require('./routes/users')
-// const adminRouter = require('./routes/admin')
 const accountRouter = require('./routes/account')
 const transactRouter =require('./routes/transactions')
 
@@ -17,6 +16,8 @@ connectDB()
 
 //connect to express server
 const app = express()
+
+
 
 //initialize morgan middleware
 app.use(morgan('dev'))
@@ -39,11 +40,12 @@ app.use((req, res, next) => {
 
 })
 
+
 //routes
-app.use('/users', userRouter) //This users and the admin uses this register and login
+app.use('/users', userRouter) //The users and the admin uses this to register and login
 app.use('/admin', accountRouter) //admin uses this to manage user Accounts
-app.use('/users', transactRouter)
-app.use('/admin', transactRouter)
+app.use('/users', transactRouter)// This is the route for user transaction
+app.use('/admin', transactRouter)// Admin manages and has access to user transactions through this route
 
 
 
@@ -68,6 +70,8 @@ app.use((error, req, res, next) => {
 
 // PORT
 const port = process.env.PORT || PORT
+
+
 
 // listen to connections
 app.listen(port, ()=>console.log(`:::> listening on http://localhost:${port}`))

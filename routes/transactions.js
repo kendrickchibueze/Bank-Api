@@ -11,7 +11,7 @@ const transactController = require('../controllers/transaction')
 /**
  * @desc -public route to see all transactions by users
  * @routeType - get
- * @route -users/transactions/
+ * @route -users/transactions
  *
  */
 
