@@ -25,7 +25,7 @@ This project is a standardization project for Learnable'21  Backend Interns
 
 ✅ The users(regular or admin) registration is through a form-data and not just the request body. The profileImages uploaded to the mongoDB is also available in the uploads folder.
 
-✅As shown from the codebase, when using the PATCH request, the request body should be in an array of object ` [{}]`.
+✅As shown from the codebase, when using the PATCH request, the request body should be in an array of object. Example ` [{"propName":"transaction", "value":"deposit" }]`.
 
 ✅The response to all endpoints in the bank-Api includes a request response object with a GET request Link for easy Navigation
 .
@@ -46,6 +46,6 @@ This project is a standardization project for Learnable'21  Backend Interns
 | [GET] &nbsp; users/transactions             |  users  see their transactions                           | User
 | [GET] &nbsp;  users/transactions/userId      | Get a particular user transaction                           | User
 | [POST] &nbsp; users/transaction/withdraw  | Make Withdrawal transaction by User    | User
-| [POST] &nbsp; users/transaction/transfer  |  Make a transfer transaction by User      |      User
-| [POST] &nbsp; users/transaction/deposit       |  Make a deposit transaction by a user          | User
-| [PATCH] &nbsp; admin/transaction/reverse/transactId  |  Reverse Transaction by Admin     | Admin
+|✅[POST] &nbsp; users/transaction/transfer  |  Make a transfer transaction by User      |      User
+|✅[POST] &nbsp; users/transaction/deposit       |  Make a deposit transaction by a user          | User
+|✅[PATCH] &nbsp; admin/transaction/reverse/transactId  |  Reverse Transaction by Admin     | Admin
